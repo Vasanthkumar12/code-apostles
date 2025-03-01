@@ -1,6 +1,6 @@
 
 {
-    "meetings": [
+    "events": [
       {
         "id": "meet_01",
         "topic": "React Hooks Deep Dive",
