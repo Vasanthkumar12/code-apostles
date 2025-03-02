@@ -1,0 +1,125 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0d6efd; /* Primary Blue */
+    padding: 15px 30px;
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 95%;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar title */
+.navbar .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* NavLink styling */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+    color: #ffcc00; /* Bright Yellow */
+}
+
+/* Active link styling */
+.nav-links .active {
+    border-bottom: 2px solid #ffcc00; /* Underline effect */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+/* Group container (grid layout) */
+.group-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.group-cards {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid #ddd;
+}
+
+.group-cards:hover {
+    transform: translateY(-5px);
+}
+
+/* Image styling */
+.group-cards img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Title styling */
+.group-cards h4 {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Description styling */
+.group-cards p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Join button styling */
+.group-cards button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.group-cards button:hover {
+    background-color: #0056b3;
+}
