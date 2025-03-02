@@ -1,3 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#app {
+    background-image: url("./assets/bg-img.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 /* Navbar container */
 .navbar {
     display: flex;

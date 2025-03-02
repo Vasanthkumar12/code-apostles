@@ -1,0 +1,180 @@
+#register-form, #sign-form {
+    height: 100vh;
+    /* background-color: aliceblue; */
+} 
+/* #register-form > section {
+    height: 50vh;
+    margin-top: 300px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/* Registration Form Container */
+section {
+    margin: auto;
+    padding: 5px;
+    padding-right: 80px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#sign-form > section > #form {
+    margin-top: 200px;
+}
+
+#form {
+    margin-top: 5px;
+    background: rgb(34,105,207);
+    background: linear-gradient(90deg, rgb(82, 171, 196) 28%, rgb(204, 173, 205) 65%);    padding: 60px;
+    padding-right: 80px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-left: -40px;
+}
+
+/* Form Header */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+    padding-top: 0px;
+}
+
+/* Input Fields */
+input, #interests {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Labels */
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: yellow;
+    font-weight: 600;
+    margin-top: 10px;
+    letter-spacing: 1.2px;
+}
+
+/* Validation Icons */
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+.hide {
+    display: none;
+}
+
+#signup, #signin {
+    margin-left:15px;
+    font-size: 16px;
+}
+/* Error Message */
+.errmsg {
+    background-color: #ffdddd;
+    color: #d9534f;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: block;
+}
+
+.offscreen {
+    display: none;
+}
+
+/* Instruction Messages */
+.instructions {
+    font-size: 16px;
+    color: #582929;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Already Registered Section */
+p {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.link {
+    color: #1f5b9b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#already-registered {
+    font-size: 16px;
+}
+
+#interests {
+    width: 430px
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    section {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
