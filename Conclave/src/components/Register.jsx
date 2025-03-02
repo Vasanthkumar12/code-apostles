@@ -2,8 +2,11 @@ import React from 'react'
 import { useRef, useState, useEffect } from 'react'
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 import '../styles/Register.css'
+import axios from 'axios'
+
+
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
@@ -24,6 +27,13 @@ export const Register = () => {
     const [matchPwd, setMatchPwd] = useState('')
     const [validMatch, setValidMatch] = useState(false)
     const [matchFocus, setMatchFocus] = useState(false)
+
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+    const [location, setLocation] = useState('')
+    const [interest, setInterest] = useState('')
+
+    const [user, setUser] = useState({username: '', password: '', email: '', phone: '', location: '', interest: '', profileImg: '' })
 
     const [errMsg, setErrMsg] = useState('')
     const [success, setSuccess] = useState(false)
@@ -50,10 +60,23 @@ export const Register = () => {
         setErrMsg('')
     }, [userName, password, matchPwd])
 
+    const navigate = useNavigate()
     function handleSubmit(e) {
+        console.log(userName, password, email, phone, location, interest)
         e.preventDefault()
-        axios.get("")
-
+        const newUser = {
+            username: userName,
+            password: password,
+            email: email,
+            phone: phone,
+            location: location,
+            interest: interest
+        };
+        setUser(newUser)
+        console.log(user, " = user")
+        axios.post("https://conclave-525c4-default-rtdb.asia-southeast1.firebasedatabase.app/users.json", newUser)
+        .then(() => navigate("/signIn"))
+        .catch(err => console.log(err.message))
     }
 
   return (
@@ -99,7 +122,8 @@ export const Register = () => {
                         </label>
                         <input 
                             type="email"
-                            placeholder='Enter email' 
+                            placeholder='Enter email'
+                            onChange={(e) => setEmail(e.target.value)}
                         />
 
                         <label htmlFor="password">
@@ -160,17 +184,22 @@ export const Register = () => {
                         <input 
                             type="number"
                             placeholder='Enter mobile number' 
+                            onChange={(e) => setPhone(e.target.value)}
                         />
 
                         <label htmlFor="location">
                             Location:
                         </label>
-                        <input type="text" placeholder='Enter location'/>
+                        <input 
+                            type="text" 
+                            placeholder='Enter location'
+                            onChange={(e) => setLocation(e.target.value)}    
+                        />
                         
                         <label htmlFor="interests">
                             Interests:
                         </label>
-                        <select id='interests'>
+                        <select id='interests'   onChange={(e) => setInterest(e.target.value)}>
                             <option value="">Select Interests</option>
                             <option value="social-activities">Social Activities</option>
                             <option value="travel">Travel</option>
@@ -190,7 +219,7 @@ export const Register = () => {
                             <option value="family">Family</option>
                             <option value="animals">Animals</option>
                         </select>
-                        <button id="signup" disabled={!validName || !validPwd || !validMatch? true : false}>Sign Up</button>
+                        <button id="signup" disabled={!validName || !validPwd || !validMatch? true : false}>Register</button>
                     </form>
 
                     <div>

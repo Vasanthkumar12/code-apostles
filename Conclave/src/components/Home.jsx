@@ -12,7 +12,7 @@ const Home = () => {
     if (eventState.error || interestState.error) return <p>Error loading data.</p>;
 
     return (
-      <>
+      <div id='home'>
       <Navbar/>
         <div className="parent-container">
             {/* Left Sidebar */}
@@ -32,7 +32,7 @@ const Home = () => {
             </div>
         </div>
         <SubscribedEvents/>
-        </>
+        </div>
     );
 
 };

@@ -1,5 +1,9 @@
 
 /* Parent container: Main layout */
+#home {
+    background-color: white;
+}
+
 .parent-container {
     display: grid;
     grid-template-columns: 1fr 4fr; 

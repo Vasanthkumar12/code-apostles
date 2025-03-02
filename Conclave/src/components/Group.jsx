@@ -5,6 +5,7 @@ import { ConclaveContext } from "../context/ConclaveContext";
 import LeftSidebar from "../common/LeftSidebar";
 import Navbar from "../common/Navbar";
 import JoinedGroups from "./JoinedGroups";
+import '../styles/Group.css'
 
 const Group = () => {
     const { groupState, interestState, filteredGroups } = useContext(ConclaveContext);
@@ -13,7 +14,7 @@ const Group = () => {
     if (groupState.error || interestState.error) return <p>Error loading data.</p>;
     
     return (
-        <>
+        <div id="group">
         <Navbar/>
         <div className="parent-container">
             <LeftSidebar />
@@ -31,7 +32,7 @@ const Group = () => {
             </div>
             <JoinedGroups/>
         </div>
-        </>
+        </div>
     );
 };
 
